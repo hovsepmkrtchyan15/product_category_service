@@ -1,4 +1,4 @@
-package com.example.product_category_service.dtoCategory;
+package com.example.product_category_service.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,8 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CreateCategoryDto {
-
-    private String name;
-
+public class UserAuthResponseDto {
+    private String token;
+    private UserDto user;
 }

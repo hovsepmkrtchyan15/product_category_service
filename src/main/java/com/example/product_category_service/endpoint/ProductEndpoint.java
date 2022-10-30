@@ -1,8 +1,8 @@
-package com.example.product_category_service.endPoint;
+package com.example.product_category_service.endpoint;
 
-import com.example.product_category_service.dtoProduct.CreateProductDto;
-import com.example.product_category_service.dtoProduct.ProductResponseDto;
-import com.example.product_category_service.dtoProduct.UpdateProductDto;
+import com.example.product_category_service.dto.CreateProductDto;
+import com.example.product_category_service.dto.ProductResponseDto;
+import com.example.product_category_service.dto.UpdateProductDto;
 import com.example.product_category_service.mapper.ProductMapper;
 import com.example.product_category_service.model.Category;
 import com.example.product_category_service.model.Product;
@@ -51,7 +51,7 @@ public class ProductEndpoint {
         return ResponseEntity.ok(createProductDto);
     }
 
-    @PutMapping()
+    @PutMapping("/update")
     public ResponseEntity<?> updateProduct(@RequestBody UpdateProductDto updateProductDto) {
         if (updateProductDto.getId() == 0) {
             return ResponseEntity.badRequest().build();
@@ -60,7 +60,7 @@ public class ProductEndpoint {
         return ResponseEntity.ok(updateProductDto);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteById(@PathVariable("id") int id) {
         if (id == 0) {
             return ResponseEntity.badRequest().build();

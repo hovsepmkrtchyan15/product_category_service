@@ -1,4 +1,4 @@
-package com.example.product_category_service.dtoProduct;
+package com.example.product_category_service.dto;
 
 import com.example.product_category_service.model.Category;
 import lombok.AllArgsConstructor;

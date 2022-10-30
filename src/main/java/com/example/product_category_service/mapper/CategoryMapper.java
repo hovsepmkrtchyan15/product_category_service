@@ -1,8 +1,8 @@
 package com.example.product_category_service.mapper;
 
-import com.example.product_category_service.dtoCategory.CategoryResponseDto;
-import com.example.product_category_service.dtoCategory.CreateCategoryDto;
-import com.example.product_category_service.dtoCategory.UpdateCategoryDto;
+import com.example.product_category_service.dto.CategoryResponseDto;
+import com.example.product_category_service.dto.CreateCategoryDto;
+import com.example.product_category_service.dto.UpdateCategoryDto;
 import com.example.product_category_service.model.Category;
 import org.mapstruct.Mapper;
 

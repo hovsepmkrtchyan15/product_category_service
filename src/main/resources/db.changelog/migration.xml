@@ -34,6 +34,19 @@
                                  referencedColumnNames="id"
                                  referencedTableName="category"/>
     </changeSet>
+    <changeSet id="addUserTable" author="hmkrtchyan">
+        <createTable tableName="user">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(255)"/>
+            <column name="surname" type="varchar(255)"/>
+            <column name="email" type="varchar(255)"/>
+            <column name="password" type="varchar(255)"/>
+            <column name="role" type="enum('ADMIN','USER')"/>
+
+        </createTable>
+    </changeSet>
 
 
 
