@@ -25,8 +25,7 @@ public class UserService {
     public User save(User map) {
         map.setRole(Role.USER);
         map.setPassword(passwordEncoder.encode(map.getPassword()));
-        User save = userRepository.save(map);
-        return save;
+        return userRepository.save(map);
     }
 
     public Optional<User> findByAuthEmail(UserAuthDto userAuthDto) {

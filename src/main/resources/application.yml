@@ -7,12 +7,30 @@ spring:
   liquibase:
     change-log: db.changelog/migration.xml
 
+  mvc:
+   pathmatch:
+    matching-strategy: ant-path-matcher
+
 jwt:
   secret: 55644fgf$%&jh
   expiration: 450000
 
+logging:
+  logback:
+    rollingpolicy:
+      file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}.%i.gz # by date
+      max-file-size: 10MB # by size
+  file:
+    name: C:\Users\Hoso\IdeaProjects\product_category_service\log\application.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss}  %-5level %logger{36} - %msg%n"
+  level:
+    root: info
+    com.example: info
 
-
+cb:
+  url: "https://cb.am/latest.json.php"
 
 
 

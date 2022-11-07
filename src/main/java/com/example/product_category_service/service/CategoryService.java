@@ -20,7 +20,8 @@ public class CategoryService {
     private final CategoryMapper categoryMapper;
 
     public List<CategoryResponseDto> findAll() {
-        return categoryMapper.map(categoryRepository.findAll());
+        List<Category> all = categoryRepository.findAll();
+        return categoryMapper.map(all);
     }
 
     public Optional<Category> findById(int id) {
@@ -28,10 +29,17 @@ public class CategoryService {
     }
 
     public void save(CreateCategoryDto createCategoryDto) {
+        if (createCategoryDto == null) {
+            throw new RuntimeException();
+        }
         categoryRepository.save(categoryMapper.map(createCategoryDto));
     }
 
     public void update(UpdateCategoryDto updateCategoryDto) {
+        Optional<Category> byId = categoryRepository.findById(updateCategoryDto.getId());
+        if (byId.isEmpty()) {
+            throw new NullPointerException();
+        }
         categoryRepository.save(categoryMapper.map(updateCategoryDto));
     }
 

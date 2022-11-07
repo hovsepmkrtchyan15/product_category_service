@@ -10,6 +10,7 @@ import com.example.product_category_service.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.Optional;
@@ -22,8 +23,10 @@ public class ProductEndpoint {
     private final ProductService productService;
     private final ProductMapper productMapper;
 
+
     @GetMapping()
     public ResponseEntity<List<ProductResponseDto>> getAllProducts(){
+
       return ResponseEntity.ok(productService.findAll());
     }
 
